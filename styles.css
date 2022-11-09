@@ -18,11 +18,45 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    width:50%;
+    margin: 4rem;
+    padding:3rem;
     flex-direction:column;
+    background-color: whitesmoke;
+    border-radius: 4px;
+    width:50vh;
 }
 
 .form-element {
     display:flex;
     flex-direction:column;
+    gap:10px;
+    width:100%;
+}
+
+.form-element input {
+    border:2px solid gainsboro;
+    border-radius: 5px;
+    font-size:12px;
+    padding:10px;
+}
+
+.form-element input:focus {
+    outline:0;
+}
+
+.form-element.success input {
+    border-color:rgb(37, 250, 122);
+}
+
+.form-element.error input {
+    border-color:red;
+}
+
+button {
+    width:100%;
+    color:white;
+    background-color:rgb(42, 42, 255);
+    padding:10px;
+    border:none;
+    border-radius:5px;
 }
