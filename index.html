@@ -12,13 +12,14 @@
     <div class="container">
             <form id="form">
                 <div class="form-container">
+                    <h1>Sign Up Form</h1>
                     <div class="form-element">
                         <label for="email">Email</label>
                         <input required id='email' name='email' type="email">
                         <div class="error"></div>
                     </div>
                     <div class="form-element">
-                        <label for="zip">Zipcode</label>
+                        <label for="zip">Zipcode <br> (Must contain 5 or 9 numbers in format XXXXX or XXXXX-XXXX)</label>
                         <input required type="text" title="Five digit zip code" id='zip'/>
                         <div class="error"></div>
                     </div>
@@ -31,6 +32,11 @@
                         <label for="password">Confirm Password</label>
                         <input required id="password2" name="password2" type="password"/>
                         <div class="error"></div>
+                    </div>
+                    <div class="form-element" id="rules">
+                        <p class="pass-rules" id="rule1">Password must have more than 8 characters</p>
+                        <p class="pass-rules" id="rule2">Password must contain at least 1 number</p>
+                        <p class="pass-rules" id="rule3">Passwords must match</p>
                     </div>
                     <button type="submit">Submit</button>
                 </div>

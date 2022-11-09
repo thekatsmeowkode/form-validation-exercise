@@ -66,3 +66,11 @@ button {
     border:none;
     border-radius:5px;
 }
+
+.pass-rules {
+    color:black
+}
+
+h1 {
+    font-size: 24px;
+}
