@@ -7,7 +7,7 @@ const passRules = document.getElementsByClassName('pass-rules')
 
 email.addEventListener('blur', () => {validateEmailInput()})
 zip.addEventListener('blur', () => {validateZipInput()})
-// password.addEventListener('blur', () => {validatePassword()})
+passConfirm.addEventListener('input', (e) => {checkRules(e)})
 password.addEventListener('input', (e) => {checkRules(e)})
 
 function checkRules(e) {
@@ -16,16 +16,16 @@ function checkRules(e) {
     const rule3 = document.getElementById('rule3')
     let password = e.target.value
     let passwordElement = document.getElementById('password')
-    let passConfirm = document.getElementById('password2')
+    let passConfirms = document.getElementById('password2')
     for (let i=0; i < passRules.length; i++) {
         passRules[i].style.color = 'red'
     }
     if (password.length > 8) {rule1.style.color = 'green'}
     if (/\d/.test(password)) {rule2.style.color = 'green'}
-    if (password === passConfirm.value) {rule3.style.color = 'green'}
-    if ((password.length>8) && (/\d/.test(password))) {alertSuccess(passwordElement)}
-    if (passwordElement.value === passConfirm.value) {alertSuccess(passConfirm)}
-    else {alertError(passwordElement, "Must enter valid password")}
+    if (password === passConfirms.value) {rule3.style.color = 'green'}
+    if ((password.length>8) && (/\d/.test(password)) && (passConfirms.value === '')) {alertSuccess(passwordElement)}
+    if (password === passConfirms.value) {alertSuccess(passConfirms)}
+    else {return null}
 }
 
 const validateEmailInput = () => {
@@ -43,10 +43,12 @@ const validateZipInput = () => {
 }
 
 // const validatePassword = () => {
-//     const passValue = password.value
+//     const passValue = passConfirm.value
+//     const originalPass = document.getElementById('password')
+//     if (passValue !== originalPass.value) {alertError(passConfirm, "Passwords must match")}
 //     if (passValue === '') {alertError(password, "Password is required")}
 //     if (!isValidPassword(passValue)) {alertError(password, "Must contain more than 8 digits and 1 number")}
-//     else {alertSuccess(password)}
+//     else {alertSuccess(passConfirm)}
 // }
 
 // function isValidPassword(password) {
