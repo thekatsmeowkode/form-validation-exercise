@@ -20,17 +20,17 @@
                     </div>
                     <div class="form-element">
                         <label for="zip">Zipcode <br> (Must contain 5 or 9 numbers in format XXXXX or XXXXX-XXXX)</label>
-                        <input required type="text" title="Five digit zip code" id='zip'/>
+                        <input required type="text" minlength="5" pattern="^([0-9]{5})(?:[-\s]*([0-9]{4}))?$" title="Five digit zip code" id='zip'/>
                         <div class="error"></div>
                     </div>
                     <div class="form-element">
                         <label for="password">Password</label>
-                        <input required id="password" name="password" type="password"/>
+                        <input required id="password" minlength='9' pattern='^(?=.*\d).{4,50}$' name="password" type="new-password"/>
                         <div class="error"></div>
                     </div>
                     <div class="form-element">
                         <label for="password">Confirm Password</label>
-                        <input required id="password2" name="password2" type="password"/>
+                        <input required id="password2" minlength='9' pattern='^(?=.*\d).{4,50}$' name="password2" type="new-password"/>
                         <div class="error"></div>
                     </div>
                     <div class="form-element" id="rules">
@@ -38,7 +38,7 @@
                         <p class="pass-rules" id="rule2">Password must contain at least 1 number</p>
                         <p class="pass-rules" id="rule3">Passwords must match</p>
                     </div>
-                    <button type="submit">Submit</button>
+                    <button type="submit" id="submit">Submit</button>
                 </div>
             </form>
     </div>
